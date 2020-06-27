@@ -1,6 +1,4 @@
-# PRA1-Web-Scraping-UOC
-
-Está PRA1 ha sido realizada por Carlos Alonso Cabrera.
+# Web-Scraping-UOC
 
 A continuación se describen brevemente los archivos contenidos en la práctica:
 
