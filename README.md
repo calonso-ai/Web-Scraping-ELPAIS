@@ -1,7 +1,7 @@
 # Web-Scraping demo EL PAIS
 
-Files contained in:
+Files contained in the repository:
 
-Script "Web Scraping ELPAIS calonsocab.py" Se recorre la URL de la versión online del periodico ELPAIS obteniendo los titulares diarios. El objetivo es conocer cuales son los temas de actualidad.
+-The script "web_scraping_ELPAIS.py" scroll through ELPAIS newspapper web collecting all headlines.The goal is indentifying trend news.
 
-Dataset "calonsocab_PRA1.csv" Se vuelcan los titulares a un archivo ".csv" separado por el caracter ";" ya que algunos de los titulares obtenidos contienen el caracter ",".
+-The file "calonsocab_PRA1.csv" contains all headlines obtained by "web_scraping_ELPAIS.py" in text format separed by ';'.
