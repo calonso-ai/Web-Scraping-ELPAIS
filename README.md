@@ -1,4 +1,4 @@
-# Web-Scraping-UOC
+# Web-Scraping
 
 A continuación se describen brevemente los archivos contenidos en la práctica:
 
