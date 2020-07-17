@@ -27,7 +27,7 @@ text=soup.find_all('h2', class_='articulo-titulo')
 list_titles = []
 
 #A continuación se abre un documento '.csv' 
-with open("calonsocab_PRA1.csv", "w") as ws_file:
+with open("web_scraping_export.csv", "w") as ws_file:
 
 #Y se usa un bucle 'for' para acceder a los elementos <a> contenidos en el objeto 'text'.
 #Se usa la función 'get_text()' para acceder al text almacenado en el elemento <a>.
