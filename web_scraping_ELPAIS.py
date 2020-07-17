@@ -2,35 +2,35 @@ import requests
 import csv
 from bs4 import BeautifulSoup
 
-#Se usa la función get para acceder a la URL donde se desea hacer web scraping
+#get function is used to access the URL, where web scraping is applied.
 result=requests.get("https://www.elpais.com")
 
-#Se comprueba que el resultado de la petición es correcto, por lo tanto el acceso
-#a la web será satisfactorio
+#We check whether request is successful
 print(result.status_code)
 
-#A continuación se almacena el contenido de la página web accedida en una variable
+#We save the extracted content in src
 src=result.content
 
-#Una vez se tiene almacenada la página que se quiere analizar, se usa la librería
-#BeautifulSoup para analizar el documento HTML almacenado.A través del atributo
-#'html5lib' se le indica que tipo de documento se quiere analizar.
+#Once the analyzed page is stored, the library BeautifulSoup  is used
+#to parse the stored HTML document. Through the attribute
+# 'html5lib' is told what type of document to be analyzed.
 soup=BeautifulSoup(src,'html5lib')
 
-#A través de la inspección del código fuente de la URL indicada anteriormente
-#se ve que los titulares que quieren extraerse están contenidos en elementos <a>
-#bajo la etiqueta 'h2' y con el atributo class='articulo-titulo'. Por lo tanto a través
-#de la siguiente función se acceden a todos los elementos 'h2' cuyo atributo
-#class='articulo-titulo'
+
+#Through source code of the URL inspection 
+#you see that the headlines you want to extract are contained in <a> elements
+#under the label 'h2' and with the attribute class = 'article-title'. Therefore through
+#following function all elements 'h2' whose attribute is accessed
+# class = 'article-titulo'
 text=soup.find_all('h2', class_='articulo-titulo')
 
 list_titles = []
 
-#A continuación se abre un documento '.csv' 
+#A document '.csv' is opened
 with open("web_scraping_export.csv", "w") as ws_file:
 
-#Y se usa un bucle 'for' para acceder a los elementos <a> contenidos en el objeto 'text'.
-#Se usa la función 'get_text()' para acceder al text almacenado en el elemento <a>.
+#Through a 'for' loop is possible to access all <a> elements contained in 'text' object.
+#'get_text()' is used to access the text contained in <a> element.
     for h2_tag in text:
 
         title = h2_tag.find('a').get_text()
@@ -41,12 +41,11 @@ with open("web_scraping_export.csv", "w") as ws_file:
         #Se guarda el contenido accedido en el vector list_titles.
         list_titles.append(title)
 
-#Una vez finalizado el bucle, se han accedido a todos los elemento y se han volvado en el fichero '.csv'
-#se cierra el fichero '.csv' en cuestión.
+#We close '.csv' file
 ws_file.close()
 
 #-----------
-#REFERENCIAS
+#Reference
 #-----------
 
 #https://towardsdatascience.com/web-scraping-news-articles-in-python-9dd605799558
